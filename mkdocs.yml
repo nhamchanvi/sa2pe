@@ -1,0 +1,260 @@
+# Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
+site_name: SysAdmin to Platform Engineer Journey
+site_url: https://nhamchanvi.github.io/
+site_author: Chanvi Nham
+site_description: >-
+  SysAdmin to Platform Engineer Journey
+
+# Repository
+repo_name: nhamchanvi/sa2pe
+repo_url: https://github.com/nhamchanvi/sa2pe
+
+# Copyright
+copyright: Copyright &copy; 2024 - 2034 Chanvi Nham
+
+# Configuration
+theme:
+  name: material
+  # custom_dir: material/overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+# Plugins
+plugins:
+  - blog
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+# Hooks
+# hooks:
+#   - material/overrides/hooks/shortcodes.py
+#   - material/overrides/hooks/translations.py
+
+# Additional configuration
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  # analytics:
+  #   provider: google
+  #   property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nhamchanvi
+    # - icon: fontawesome/brands/docker
+    #   link: https://hub.docker.com/r/nhamchanvi/sa2pe/
+    # - icon: fontawesome/brands/python
+    #   link: https://pypi.org/project/mkdocs-material/
+    # - icon: fontawesome/brands/mastodon
+    #   link: https://fosstodon.org/@squidfunk
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/squidfunk
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/chanvi/
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Getting started: 
+    - index.md
+  - Core Technical Skills:
+    - core/index.md
+    - Linux (OS fundamentals): core/linux-os-fundamentals.md
+    - Basic programming skills: core/basic-programming-skills.md
+    - Bash: core/bash.md
+    - Git: core/git.md
+    - Network fundamentals: core/network-fundamentals.md
+    - Cloud platform fundamentals: core/cloud-platform-fundamentals.md
+    # - Setting up site search: core/setting-up-site-search.md
+    # - Setting up site analytics: core/setting-up-site-analytics.md
+    # - Setting up social cards: core/setting-up-social-cards.md
+    # - Setting up a blog: core/setting-up-a-blog.md
+    # - Setting up tags: core/setting-up-tags.md
+    # - Setting up versioning: core/setting-up-versioning.md
+    # - Setting up the header: core/setting-up-the-header.md
+    # - Setting up the footer: core/setting-up-the-footer.md
+    # - Adding a git repository: core/adding-a-git-repository.md
+    # - Adding a comment system: core/adding-a-comment-system.md
+    # - Building an optimized site: core/building-an-optimized-site.md
+    # - Building for offline usage: core/building-for-offline-usage.md
+    # - Extensions:
+    #   - core/extensions/index.md
+    #   - Python Markdown: core/extensions/python-markdown.md
+    #   - Python Markdown Extensions: core/extensions/python-markdown-extensions.md
+  - DevOps Technical Skills:
+    - devops/index.md
+    - Continuous Integration (CI), Continuous Delivery (CD) and Continuous Deployment: devops/continuos-integration-ci-continuous-delivery-cd-and-continuos-deployment.md
+    - Infrastructure as Code (IaC): devops/infrastructure-as-code-iac.md
+    - Microservice architecture: devops/microservice-architecture.md
+    - Container orchestrators: devops/container-orchestrators.md
+    - Monitoring and observability: devops/montoring-and-observability.md
+    - Software Reliability Engineering (SRE): devops/software-reliability-engineering-sre.md
+    - Security: devops/security.md
+    # - Projects: devops/projects.md
+    # - Search: devops/search.md
+    # - Social: devops/social.md
+    # - Tags: devops/tags.md
+    # - Typeset: devops/typeset.md
+    # - Requirements:
+    #   - Image processing: devops/requirements/image-processing.md
+    #   - Caching: devops/requirements/caching.md
+  - Soft Skills:
+    - soft/index.md
+    - Communication: soft/communication.md
+    - People skills: soft/people-skills.md
+    - Agile: soft/agile.md
+    - DevOps culture and organizations: soft/devops-culture-and-organizations.md
+    - Lean: soft/lean.md
+    # - Data tables: soft/data-tables.md
+    # - Diagrams: soft/diagrams.md
+    # - Footnotes: soft/footnotes.md
+    # - Formatting: soft/formatting.md
+    # - Grids: soft/grids.md
+    # - Icons, Emojis: soft/icons-emojis.md
+    # - Images: soft/images.md
+    # - Lists: soft/lists.md
+    # - Math: soft/math.md
+    # - Tooltips: soft/tooltips.md
+  # - Insiders:
+  #   - insiders/index.md
+  #   - Getting started: insiders/getting-started.md
+  #   - FAQ: insiders/faq/sponsoring.md
+  #   - Changelog:
+  #     - insiders/changelog/index.md
+  #     - How to upgrade: insiders/upgrade.md
+  # - Community:
+  #   - Contributing:
+  #     - contributing/index.md
+  #     - Reporting a bug: contributing/reporting-a-bug.md
+  #     - Reporting a docs issue: contributing/reporting-a-docs-issue.md
+  #     - Requesting a change: contributing/requesting-a-change.md
+  #     - Adding translations: contributing/adding-translations.md
+  #     - Making a pull request: contributing/making-a-pull-request.md
+  #     - Asking a question: https://github.com/squidfunk/mkdocs-material/discussions
+  #   - Guides:
+  #     - Creating a reproduction: guides/creating-a-reproduction.md
+  #   - Community experts program:
+  #     - insiders/community-experts-program/index.md
+  - Blog:
+    - blog/index.md
